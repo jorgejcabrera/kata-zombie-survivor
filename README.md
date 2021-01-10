@@ -25,14 +25,14 @@ Survivors can use equipment to help them in their mission.
 - Each Wound a Survivor receives reduces the number of pieces of Equipment they can carry by 1.
     - If the Survivor has more Equipment than their new capacity, choose a piece to discard (implement however you like).
 
-## Step Three : The Game
+## Step Three : The game
 
-A Game includes one or more Survivors, as well as other Game elements that are outside the scope of this kata.
+A game includes one or more Survivors, as well as other game elements that are outside the scope of this kata.
 
-- A **Game** begins with 0 Survivors.
-- A Game can have Survivors added to it at any time.
-    - Survivor Names within a Game must be unique.
-- A Game ends immediately if all of its Survivors have died.
+- A **game** begins with 0 Survivors.
+- A game can have Survivors added to it at any time.
+    - Survivor Names within a game must be unique.
+- A game ends immediately if all of its Survivors have died.
 
 ## Step Four : Experience and Levels
 
@@ -46,26 +46,26 @@ As Survivors overcome zombies, they gain experience.
     - When a Survivor exceeds 6 Experience, they advance ("level up") to level Yellow.
     - When a Survivor exceeds 18 Experience, they advance to level Orange.
     - When a Survivor exceeds 42 Experience, they advance to level Red.
-- A Game has a Level (Level here is identical to Level for a Survivor).
-- A Game begins at Level Blue.
-- A Game Level is always equal to the level of the highest living Survivor's Level.
+- A game has a Level (Level here is identical to Level for a Survivor).
+- A game begins at Level Blue.
+- A game Level is always equal to the level of the highest living Survivor's Level.
 
 ## Step Five : Output
 
-The Game includes a running history of events that have taken place as it has been played. Managing game history is a Game responsibility.
+The game includes a running history of events that have taken place as it has been played. Managing game history is a game responsibility.
 
-- A Game's **History** begins by recording the time the Game began.
-- A Game's History notes that a Survivor has been added to the Game.
-- A Game's History notes that a Survivor acquires a piece of Equipment.
-- A Game's History notes that a Survivor is wounded.
-- A Game's History notes that a Survivor dies.
-- A Game's History notes that a Survivor levels up.
-- A Game's History notes that the Game Level changes.
-- A Game's History notes that the Game has ended when the last Survivor dies.
+- A game's **History** begins by recording the time the game began.
+- A game's History notes that a Survivor has been added to the game.
+- A game's History notes that a Survivor acquires a piece of Equipment.
+- A game's History notes that a Survivor is wounded.
+- A game's History notes that a Survivor dies.
+- A game's History notes that a Survivor levels up.
+- A game's History notes that the game Level changes.
+- A game's History notes that the game has ended when the last Survivor dies.
 
 ## Step Six : Advancement
 
-As the Game proceeds, Survivors get better.
+As the game proceeds, Survivors get better.
 
 - A set of potential **Skills** and the Levels where they are unlocked is called a **Skill Tree**.
 - Each Survivor begins with a Skill Tree.
@@ -83,10 +83,10 @@ As the Game proceeds, Survivors get better.
     - Upon reaching Orange again (43 + 18 = 61 total), a second Orange skills is unlocked.
     - Upon reaching Red again (43 + 43 = 86 total), a second Red skill is unlocked.
 - A Survivor can restart a second time, unlocking their last Red skill at (43 + 43 + 43 = 129 total) experience.
-- The Game History notes that a Survivor has acquired a new Skill.
+- The game History notes that a Survivor has acquired a new Skill.
 
 ## Notes
 
-How did you model interaction between the Survivors and the Game? Do Survivors have direct access to the Game in which they are playing? If so, can code in a Survivor's methods directly modify the state of other Survivors in the same game? Is that a potential problem?
+How did you model interaction between the Survivors and the game? Do Survivors have direct access to the game in which they are playing? If so, can code in a Survivor's methods directly modify the state of other Survivors in the same game? Is that a potential problem?
 
-How did you model the Game History? Did you make sure to keep the responsibility for tracking history a concern of the Game, and not of individual Survivors?
+How did you model the game History? Did you make sure to keep the responsibility for tracking history a concern of the game, and not of individual Survivors?
