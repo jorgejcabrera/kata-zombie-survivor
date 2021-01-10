@@ -1,10 +1,12 @@
 import EquipmentStatus.IN_HAND
+import game.rule.SurvivorMustDiedRule
 
 data class Survivor(
     val name: String,
     var wounds: Int,
-    val equipment: MutableList<Equipment> = mutableListOf()
+    internal val equipment: MutableList<Equipment> = mutableListOf()
 ) {
+    private val mustDieRule = SurvivorMustDiedRule()
 
     fun pickEquipment(equip: Equipment) {
         this.equipment.add(equip)
@@ -19,7 +21,7 @@ data class Survivor(
     }
 
     fun isAlive(): Boolean {
-        return this.wounds < 2
+        return !mustDieRule.isComplied(this)
     }
 
     fun totalEquipmentCarriedInHands(): Int {
