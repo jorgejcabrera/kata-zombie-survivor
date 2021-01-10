@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test
 
 internal class PickEquipmentUseCaseTest {
 
-    private val pickEquipment = PickEquipmentUseCase(MaxEquipmentCapacityRule())
+    private val pickEquipment = PickEquipmentUseCase()
 
     @Test
     fun `Each Survivor can carry up to 5 pieces of Equipment`() {

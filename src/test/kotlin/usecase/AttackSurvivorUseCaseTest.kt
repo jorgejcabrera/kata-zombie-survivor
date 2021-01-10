@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test
 
 class AttackSurvivorUseCaseTest {
 
-    private val attackSurvivor = AttackSurvivorUseCase(MaxEquipmentCapacityRule())
-    private val pickEquipment = PickEquipmentUseCase(MaxEquipmentCapacityRule())
+    private val attackSurvivor = AttackSurvivorUseCase()
+    private val pickEquipment = PickEquipmentUseCase()
 
     @Test
     fun `A Survivor who receives 2 Wounds dies immediately additional Wounds are ignored`() {

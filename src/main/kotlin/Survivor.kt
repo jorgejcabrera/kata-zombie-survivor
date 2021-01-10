@@ -18,10 +18,6 @@ data class Survivor(
         this.wounds++
     }
 
-    fun takeEquipment(equip: Equipment) {
-        this.equipment.find { it == equip }?.let { it.status = IN_HAND }
-    }
-
     fun isAlive(): Boolean {
         return this.wounds < 2
     }
