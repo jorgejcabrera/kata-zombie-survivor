@@ -1,5 +1,5 @@
 package game
 
-interface GameActionManager {
+interface SurvivorActionManager {
     fun actionsPerTurn(): Int
 }

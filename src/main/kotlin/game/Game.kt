@@ -1,5 +1,6 @@
 package game
 
+import Level
 import Survivor
 import game.rule.SurvivorNameMustBeUniqueRule
 import usecase.AttackSurvivorUseCase
@@ -29,5 +30,10 @@ class Game(val survivors: MutableList<Survivor> = mutableListOf()) {
     fun haveFinished(): Boolean {
         if (this.survivors.isEmpty()) return false
         return this.survivors.none { it.isAlive() }
+    }
+
+    fun level(): Level {
+        val bestSurvivor = this.survivors.maxBy { it.experience } ?: return Level.BLUE
+        return SurvivorLevelManager().level(bestSurvivor)
     }
 }

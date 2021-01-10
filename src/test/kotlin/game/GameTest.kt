@@ -1,5 +1,6 @@
 package game
 
+import Level.*
 import SurvivorTestFactory
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
@@ -64,6 +65,26 @@ class GameTest {
 
         // THEN
         assertFalse(game.haveFinished())
+    }
+
+    @Test
+    fun `A Game begins at Level Blue`() {
+        // GIVEN
+        val game = Game()
+
+        //THEN
+        assertEquals(BLUE, game.level())
+    }
+
+    @Test
+    fun `A Game Level is always equal to the level of the highest living Survivor's Level`() {
+        // GIVEN
+        val game = Game()
+        game.addSurvivor(SurvivorTestFactory.createWithSomeExperience())
+        game.addSurvivor(SurvivorTestFactory.createWithToManyExperience())
+
+        //THEN
+        assertEquals(RED, game.level())
     }
 
     private fun givenAGameWithASurvivorCalledJorge(): Game {

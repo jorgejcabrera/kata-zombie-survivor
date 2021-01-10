@@ -4,7 +4,8 @@ import game.rule.SurvivorMustDiedRule
 data class Survivor(
     val name: String,
     var wounds: Int,
-    internal val equipment: MutableList<Equipment> = mutableListOf()
+    internal val equipment: MutableList<Equipment> = mutableListOf(),
+    var experience: Int = 0
 ) {
     private val mustDieRule = SurvivorMustDiedRule()
 
@@ -31,4 +32,9 @@ data class Survivor(
     fun totalEquipmentCarried(): Int {
         return equipment.size
     }
+
+    fun increaseExperience() {
+        this.experience++
+    }
+
 }

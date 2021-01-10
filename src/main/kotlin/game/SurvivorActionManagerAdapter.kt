@@ -1,6 +1,6 @@
 package game
 
-class GameActionManagerAdapter : GameActionManager {
+class SurvivorActionManagerAdapter : SurvivorActionManager {
     override fun actionsPerTurn(): Int {
         return 3
     }

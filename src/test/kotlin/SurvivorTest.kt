@@ -21,6 +21,17 @@ class SurvivorTest {
         assertEquals(survivor.wounds, 0)
     }
 
+    @Test
+    fun `Each Survivor begins with 0 Experience`() {
+        // GIVEN
+        val survivor = SurvivorTestFactory.common()
+
+        // THEN
+        assertEquals(
+            0, survivor.experience
+        )
+    }
+
 }
 
 

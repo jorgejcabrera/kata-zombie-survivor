@@ -35,5 +35,21 @@ class SurvivorTestFactory {
                 equipment = equipment
             )
         }
+
+        fun createWithSomeExperience(): Survivor {
+            return Survivor(
+                name = "Jasinto",
+                wounds = 0,
+                experience = 25
+            )
+        }
+
+        fun createWithToManyExperience(): Survivor {
+            return Survivor(
+                name = "Jorge",
+                wounds = 0,
+                experience = 50
+            )
+        }
     }
 }
